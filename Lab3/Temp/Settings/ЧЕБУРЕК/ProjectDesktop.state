@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<?AutomationStudio Version=3.0?>
+<Project xmlns="http://br-automation.co.at/AS/Project"><Active ID="0"/><Configuration Name="SampleText"/><ConfigurationFiles xmlns="" ConfigurationName="SampleText" ActiveConfigurationFile="\Logical\Libraries\Library\FB_Axis.c"><ConfigurationFile Placement="\Logical\SDCAxisCtrlX\Main.c,SDCAxisCtrlX,2,44,0,1,-1,-1,-1,-1,2,24,1551,645"/><ConfigurationFile Placement="\Logical\Libraries\Library\Library.fun,Libraries.Library,1,44,0,1,-1,-1,-1,-1,2,24,1551,645"/><ConfigurationFile Placement="\Logical\Libraries\Library\FB_Axis.c,Libraries.Library,2,44,0,1,-1,-1,-1,-1,2,24,1551,645"/></ConfigurationFiles></Project>
