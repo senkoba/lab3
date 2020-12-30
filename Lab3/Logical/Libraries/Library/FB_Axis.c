@@ -23,20 +23,21 @@ void FB_Axis(struct FB_Axis* inst)
 void handleEncoder(struct FB_Axis* inst){
 	inst->counter_buffer += inst->counter - inst->last_counter;
 	inst->last_counter = inst->counter;
-	inst->sdc_enc->iActPos = inst->counter;
-	if((inst->sdc_enc->iLifeCnt) % 10 == 0){
+	inst->sdc_enc.iActPos = inst->counter;
+	if((inst->sdc_enc.iLifeCnt) % 10 == 0){
 		inst->speed = (inst->counter_buffer) / (0.002 * 10);
 		inst->counter_buffer = 0;
 	}
 }
 
 void handleEndSwitches(struct FB_Axis* inst){
-	inst->sdc_dido->iNegHwEnd = inst->endswitch_a_reached;
-	inst->sdc_dido->iPosHwEnd = inst->endswitch_b_reached;
+	inst->sdc_dido.iNegHwEnd = inst->endswitch_a_reached;
+	inst->sdc_dido.iPosHwEnd = inst->endswitch_b_reached;
 }
 
 void setPwm(struct FB_Axis* inst){
-	inst->desired_speed = inst->sdc_drv->oSetPos * 1 / 32767;
+	//inst->desired_speed = inst->sdc_drv.oSetPos * 1 / 32767;
+	inst->desired_speed = 10;
 	inst->regulator.e = inst->desired_speed - inst->speed;
 	FB_Regulator(&(inst->regulator));
 	inst->pwm_value = (inst->regulator.u) / (inst->regulator.max_abs_value) * (inst->pwm_period);
